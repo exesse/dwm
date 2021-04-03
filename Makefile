@@ -6,7 +6,12 @@ include config.mk
 SRC = drw.c dwm.c util.c
 OBJ = ${SRC:.c=.o}
 
-all: options dwm
+all: options dwm autostart
+
+autostart:
+	mkdir -p /home/exesse/.local/share/dwm
+	cp ./autostart.sh /home/exesse/.local/share/dwm/autostart.sh
+	cp ./conkyrc /home/exesse/.conkyrc
 
 options:
 	@echo dwm build options:
