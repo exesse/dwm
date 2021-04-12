@@ -9,9 +9,9 @@ OBJ = ${SRC:.c=.o}
 all: options dwm autostart
 
 autostart:
-	mkdir -p /home/exesse/.local/share/dwm
-	cp ./autostart.sh /home/exesse/.local/share/dwm/autostart.sh
-	cp ./conkyrc /home/exesse/.conkyrc
+	mkdir -p ${HOME}/.local/share/dwm
+	cp ./autostart.sh ${HOME}/.local/share/dwm/autostart.sh
+	cp ./conkyrc ${HOME}/.conkyrc
 
 options:
 	@echo dwm build options:

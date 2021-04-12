@@ -1,0 +1,8 @@
+# Keyboard
+setxkbmap -option lv3:ralt_switch -option grp:caps_toggle -option grp_led:caps -layout us,ru
+
+# Wallpaper
+hsetroot -cover $HOME/data/media/wallpapers/black_see.jpg
+
+# Conky
+conky | while read -r; do xsetroot -name "$REPLY"; done
