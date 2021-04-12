@@ -6,12 +6,15 @@ include config.mk
 SRC = drw.c dwm.c util.c
 OBJ = ${SRC:.c=.o}
 
-all: options dwm autostart
+all: options dwm
 
 autostart:
-	mkdir -p ${HOME}/.local/share/dwm
-	cp ./autostart.sh ${HOME}/.local/share/dwm/autostart.sh
-	cp ./conkyrc ${HOME}/.conkyrc
+	@sudo apt -qq update && sudo apt install -qqy ranger conky hsetroot 2>/dev/null
+	@mkdir -p ${HOME}/.local/share/dwm
+	@cp ./autostart.sh ${HOME}/.local/share/dwm/autostart.sh
+	@echo "exec `pwd`/dwmrc" >> ${HOME}/.local/share/dwm/autostart.sh
+	@cp ./conkyrc ${HOME}/.conkyrc
+	@echo "Autostart scripts updated."
 
 options:
 	@echo dwm build options:
